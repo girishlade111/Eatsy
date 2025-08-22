@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import type { Restaurant } from '@/lib/types';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -16,47 +16,47 @@ import {
 } from '@/components/ui/select';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface RestaurantListingsProps {
   allRestaurants: Restaurant[];
+  uniqueCuisines: string[];
+   searchParams?: {
+    cuisine?: string;
+    rating?: string;
+    deliveryTime?: string;
+    price?: string;
+    category?: string;
+  };
 }
 
 export default function RestaurantListings({
   allRestaurants,
+  uniqueCuisines,
+  searchParams,
 }: RestaurantListingsProps) {
-  const [cuisineFilter, setCuisineFilter] = useState('all');
-  const [ratingFilter, setRatingFilter] = useState('all');
-  const [deliveryTimeFilter, setDeliveryTimeFilter] = useState('all');
-  const [priceFilter, setPriceFilter] = useState('all');
-  const [categoryFilter, setCategoryFilter] = useState('all');
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const uniqueCuisines = [
-    'all',
-    ...Array.from(new Set(allRestaurants.map((r) => r.cuisine))),
-  ];
+  const [cuisineFilter, setCuisineFilter] = useState(searchParams?.cuisine || 'all');
+  const [ratingFilter, setRatingFilter] = useState(searchParams?.rating || 'all');
+  const [deliveryTimeFilter, setDeliveryTimeFilter] = useState(searchParams?.deliveryTime || 'all');
+  const [priceFilter, setPriceFilter] = useState(searchParams?.price || 'all');
+  const [categoryFilter, setCategoryFilter] = useState(searchParams?.category || 'all');
+  
+  useEffect(() => {
+    const params = new URLSearchParams();
+    if (cuisineFilter !== 'all') params.set('cuisine', cuisineFilter);
+    if (ratingFilter !== 'all') params.set('rating', ratingFilter);
+    if (deliveryTimeFilter !== 'all') params.set('deliveryTime', deliveryTimeFilter);
+    if (priceFilter !== 'all') params.set('price', priceFilter);
+    if (categoryFilter !== 'all') params.set('category', categoryFilter);
+    
+    const queryString = params.toString();
+    router.replace(`${pathname}${queryString ? `?${queryString}` : ''}`);
 
-  const filteredRestaurants = useMemo(() => {
-    return allRestaurants.filter((r) => {
-      if (cuisineFilter !== 'all' && r.cuisine !== cuisineFilter) return false;
-      if (ratingFilter !== 'all' && r.rating < parseFloat(ratingFilter))
-        return false;
-      if (
-        deliveryTimeFilter !== 'all' &&
-        r.deliveryTime > parseInt(deliveryTimeFilter)
-      )
-        return false;
-      if (priceFilter !== 'all' && r.priceRange !== priceFilter) return false;
-      if (categoryFilter !== 'all' && r.category !== categoryFilter && r.category !== 'all') return false;
-      return true;
-    });
-  }, [
-    allRestaurants,
-    cuisineFilter,
-    ratingFilter,
-    deliveryTimeFilter,
-    priceFilter,
-    categoryFilter,
-  ]);
+  }, [cuisineFilter, ratingFilter, deliveryTimeFilter, priceFilter, categoryFilter, pathname, router])
+
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -148,9 +148,9 @@ export default function RestaurantListings({
           </Card>
       </aside>
       <main className="lg:col-span-3">
-        {filteredRestaurants.length > 0 ? (
+        {allRestaurants.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {filteredRestaurants.map((restaurant) => (
+            {allRestaurants.map((restaurant) => (
               <Card
                 key={restaurant.id}
                 className="overflow-hidden transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-xl"
