@@ -1,5 +1,12 @@
 import Link from 'next/link';
-import { UtensilsCrossed, Facebook, Twitter, Instagram } from 'lucide-react';
+import {
+  UtensilsCrossed,
+  Instagram,
+  Linkedin,
+  Github,
+  Codepen,
+  Mail,
+} from 'lucide-react';
 import { Button } from './ui/button';
 
 const Footer = () => {
@@ -21,29 +28,80 @@ const Footer = () => {
           <div>
             <h4 className="font-headline font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              <li><Link href="/restaurants" className="text-sm text-muted-foreground hover:text-primary">Restaurants</Link></li>
-              <li><Link href="/#how-it-works" className="text-sm text-muted-foreground hover:text-primary">How It Works</Link></li>
-              <li><Link href="/login" className="text-sm text-muted-foreground hover:text-primary">Login</Link></li>
+              <li>
+                <Link
+                  href="/restaurants"
+                  className="text-sm text-muted-foreground hover:text-primary"
+                >
+                  Restaurants
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/#how-it-works"
+                  className="text-sm text-muted-foreground hover:text-primary"
+                >
+                  How It Works
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/login"
+                  className="text-sm text-muted-foreground hover:text-primary"
+                >
+                  Login
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="font-headline font-semibold mb-4">Legal</h4>
             <ul className="space-y-2">
-              <li><Link href="/terms" className="text-sm text-muted-foreground hover:text-primary">Terms of Service</Link></li>
-              <li><Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary">Privacy Policy</Link></li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-sm text-muted-foreground hover:text-primary"
+                >
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-sm text-muted-foreground hover:text-primary"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="font-headline font-semibold mb-4">Follow Us</h4>
-            <div className="flex space-x-4">
+            <div className="flex space-x-2">
               <Button variant="ghost" size="icon" asChild>
-                <Link href="#"><Facebook className="h-5 w-5 text-muted-foreground" /></Link>
+                <Link href="https://www.instagram.com/girish_lade_/" target='_blank'>
+                  <Instagram className="h-5 w-5 text-muted-foreground" />
+                </Link>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <Link href="#"><Twitter className="h-5 w-5 text-muted-foreground" /></Link>
+                <Link href="https://www.linkedin.com/in/girish-lade-075bba201/" target='_blank'>
+                  <Linkedin className="h-5 w-5 text-muted-foreground" />
+                </Link>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <Link href="#"><Instagram className="h-5 w-5 text-muted-foreground" /></Link>
+                <Link href="https://github.com/girishlade111" target='_blank'>
+                  <Github className="h-5 w-5 text-muted-foreground" />
+                </Link>
+              </Button>
+              <Button variant="ghost" size="icon" asChild>
+                <Link href="https://codepen.io/Girish-Lade-the-looper" target='_blank'>
+                  <Codepen className="h-5 w-5 text-muted-foreground" />
+                </Link>
+              </Button>
+               <Button variant="ghost" size="icon" asChild>
+                <Link href="mailto:girishlade111@gmail.com" target='_blank'>
+                  <Mail className="h-5 w-5 text-muted-foreground" />
+                </Link>
               </Button>
             </div>
           </div>
