@@ -24,8 +24,8 @@ export default function RestaurantDetailPage({
         <Image
           src={restaurant.imageUrl}
           alt={restaurant.name}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{objectFit: 'cover'}}
           className="z-0"
           data-ai-hint={`${restaurant.cuisine.toLowerCase()} restaurant interior`}
         />

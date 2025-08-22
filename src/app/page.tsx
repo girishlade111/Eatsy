@@ -42,8 +42,8 @@ export default function Home() {
         <Image
           src="https://placehold.co/1920x1080.png"
           alt="Hero background"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{objectFit: 'cover'}}
           className="z-0"
           data-ai-hint="food collage"
         />
