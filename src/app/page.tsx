@@ -16,6 +16,9 @@ import {
   ShoppingBag,
   Star,
   Clock,
+  Heart,
+  Award,
+  Leaf,
 } from 'lucide-react';
 
 export default function Home() {
@@ -63,10 +66,10 @@ export default function Home() {
                 <ShoppingBag className="h-12 w-12 text-primary" />
               </div>
               <h3 className="text-xl font-headline font-semibold mb-2">
-                1. Choose Your Meal
+                1. Explore & Select
               </h3>
               <p className="text-muted-foreground">
-                Browse through hundreds of restaurants and menus.
+                Dive into a world of flavors. Browse diverse menus from top-rated local restaurants, discover new culinary gems, and add your cravings to the cart with a simple tap.
               </p>
             </div>
             <div className="flex flex-col items-center">
@@ -74,10 +77,10 @@ export default function Home() {
                 <Bike className="h-12 w-12 text-primary" />
               </div>
               <h3 className="text-xl font-headline font-semibold mb-2">
-                2. Fast Delivery
+                2. Secure Checkout & Speedy Delivery
               </h3>
               <p className="text-muted-foreground">
-                We'll deliver your order to your doorstep in minutes.
+                Finalize your order with our secure and seamless payment process. Then, sit back and relax as our dedicated riders race against time to bring your hot and fresh meal right to your doorstep.
               </p>
             </div>
             <div className="flex flex-col items-center">
@@ -85,10 +88,10 @@ export default function Home() {
                 <ChefHat className="h-12 w-12 text-primary" />
               </div>
               <h3 className="text-xl font-headline font-semibold mb-2">
-                3. Enjoy Your Food
+                3. Savor the Moment
               </h3>
               <p className="text-muted-foreground">
-                Enjoy your delicious meal. It's that easy!
+                Unpack a delightful meal prepared with care and ready to be enjoyed. From our kitchen to your table, experience the ultimate convenience without compromising on quality. Bon appétit!
               </p>
             </div>
           </div>
@@ -145,6 +148,49 @@ export default function Home() {
                 View All Restaurants <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-choose-us" className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
+            Why Choose Eatsy?
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
+            <div className="flex flex-col items-center p-6 bg-card rounded-lg shadow-sm">
+              <div className="bg-primary/20 rounded-full p-5 mb-5">
+                <Award className="h-10 w-10 text-primary" />
+              </div>
+              <h3 className="text-xl font-headline font-semibold mb-2">
+                Unmatched Quality
+              </h3>
+              <p className="text-muted-foreground">
+                We partner with only the best, most-loved restaurants in your area, ensuring every meal is a top-quality experience.
+              </p>
+            </div>
+            <div className="flex flex-col items-center p-6 bg-card rounded-lg shadow-sm">
+              <div className="bg-primary/20 rounded-full p-5 mb-5">
+                <Heart className="h-10 w-10 text-primary" />
+              </div>
+              <h3 className="text-xl font-headline font-semibold mb-2">
+                Curated for You
+              </h3>
+              <p className="text-muted-foreground">
+                From local favorites to exotic cuisines, our vast selection is curated to satisfy any craving and dietary need.
+              </p>
+            </div>
+            <div className="flex flex-col items-center p-6 bg-card rounded-lg shadow-sm">
+              <div className="bg-primary/20 rounded-full p-5 mb-5">
+                <Leaf className="h-10 w-10 text-primary" />
+              </div>
+              <h3 className="text-xl font-headline font-semibold mb-2">
+                Fresh & Fast
+              </h3>
+              <p className="text-muted-foreground">
+                Our commitment to speed doesn't compromise freshness. Get your food delivered quickly, so you can enjoy it at its best.
+              </p>
+            </div>
           </div>
         </div>
       </section>

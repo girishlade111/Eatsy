@@ -15,9 +15,9 @@ export default function LoginPage() {
     <div className="flex items-center justify-center py-12 px-4 bg-background">
       <Card className="w-full max-w-sm">
         <CardHeader>
-          <CardTitle className="text-2xl font-headline">Login</CardTitle>
+          <CardTitle className="text-2xl font-headline">Welcome Back!</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account
+            Enter your credentials to access your account and continue your culinary journey.
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">

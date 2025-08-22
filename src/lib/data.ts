@@ -35,6 +35,13 @@ export const restaurants: Restaurant[] = [
         price: 5.99,
         imageUrl: 'https://placehold.co/100x100.png',
       },
+      {
+        id: 'm14',
+        name: 'Veggie Supreme',
+        description: 'A mix of fresh vegetables on a cheesy base.',
+        price: 15.99,
+        imageUrl: 'https://placehold.co/100x100.png',
+      }
     ],
   },
   {
@@ -47,6 +54,7 @@ export const restaurants: Restaurant[] = [
     imageUrl: 'https://placehold.co/400x250.png',
     reviews: [
       { id: 'r3', user: 'Kenji T.', rating: 5, comment: 'Authentic and fresh!' },
+      { id: 'r4', user: 'Emily R.', rating: 4.5, comment: 'The dragon roll is a must-try.' },
     ],
     menu: [
       {
@@ -63,6 +71,20 @@ export const restaurants: Restaurant[] = [
         price: 6.0,
         imageUrl: 'https://placehold.co/100x100.png',
       },
+      {
+        id: 'm15',
+        name: 'Dragon Roll',
+        description: 'Eel and cucumber topped with avocado.',
+        price: 14.50,
+        imageUrl: 'https://placehold.co/100x100.png',
+      },
+      {
+        id: 'm16',
+        name: 'Miso Soup',
+        description: 'Traditional Japanese soup with tofu and seaweed.',
+        price: 3.50,
+        imageUrl: 'https://placehold.co/100x100.png',
+      },
     ],
   },
   {
@@ -73,7 +95,9 @@ export const restaurants: Restaurant[] = [
     deliveryTime: 25,
     priceRange: 'cheap',
     imageUrl: 'https://placehold.co/400x250.png',
-    reviews: [],
+    reviews: [
+      { id: 'r5', user: 'Mike L.', rating: 4, comment: 'Great value for money.'}
+    ],
     menu: [
       {
         id: 'm6',
@@ -89,6 +113,13 @@ export const restaurants: Restaurant[] = [
         price: 3.99,
         imageUrl: 'https://placehold.co/100x100.png',
       },
+      {
+        id: 'm17',
+        name: 'Bacon Cheeseburger',
+        description: 'The classic with added crispy bacon.',
+        price: 11.99,
+        imageUrl: 'https://placehold.co/100x100.png',
+      },
     ],
   },
   {
@@ -99,7 +130,9 @@ export const restaurants: Restaurant[] = [
     deliveryTime: 35,
     priceRange: 'moderate',
     imageUrl: 'https://placehold.co/400x250.png',
-    reviews: [],
+    reviews: [
+        { id: 'r6', user: 'Maria G.', rating: 5, comment: 'The tacos are so flavorful!'}
+    ],
     menu: [
       {
         id: 'm8',
@@ -115,6 +148,13 @@ export const restaurants: Restaurant[] = [
         price: 7.0,
         imageUrl: 'https://placehold.co/100x100.png',
       },
+      {
+        id: 'm18',
+        name: 'Chicken Quesadilla',
+        description: 'Flour tortilla with chicken, cheese, and peppers.',
+        price: 10.50,
+        imageUrl: 'https://placehold.co/100x100.png',
+      }
     ],
   },
   {
@@ -125,10 +165,13 @@ export const restaurants: Restaurant[] = [
     deliveryTime: 50,
     priceRange: 'moderate',
     imageUrl: 'https://placehold.co/400x250.png',
-    reviews: [],
+    reviews: [
+        { id: 'r7', user: 'Raj P.', rating: 5, comment: 'Best Indian food I\'ve had outside of India.'}
+    ],
     menu: [
         { id: 'm10', name: 'Chicken Tikka Masala', description: 'Creamy chicken curry.', price: 15.99, imageUrl: 'https://placehold.co/100x100.png' },
-        { id: 'm11', name: 'Garlic Naan', description: 'Soft flatbread with garlic.', price: 4.50, imageUrl: 'https://placehold.co/100x100.png' }
+        { id: 'm11', name: 'Garlic Naan', description: 'Soft flatbread with garlic.', price: 4.50, imageUrl: 'https://placehold.co/100x100.png' },
+        { id: 'm19', name: 'Samosa', description: 'Crispy pastry filled with spiced potatoes and peas.', price: 5.50, imageUrl: 'https://placehold.co/100x100.png' }
     ]
   },
   {
@@ -142,7 +185,36 @@ export const restaurants: Restaurant[] = [
     reviews: [],
     menu: [
         { id: 'm12', name: 'Pad Thai', description: 'Stir-fried rice noodles with shrimp.', price: 13.99, imageUrl: 'https://placehold.co/100x100.png' },
-        { id: 'm13', name: 'Tom Yum Soup', description: 'Spicy and sour soup.', price: 6.99, imageUrl: 'https://placehold.co/100x100.png' }
+        { id: 'm13', name: 'Tom Yum Soup', description: 'Spicy and sour soup.', price: 6.99, imageUrl: 'https://placehold.co/100x100.png' },
+        { id: 'm20', name: 'Green Curry', description: 'Spicy green curry with chicken and bamboo shoots.', price: 14.99, imageUrl: 'https://placehold.co/100x100.png' }
+    ]
+  },
+  {
+    id: '7',
+    name: 'The Green Bowl',
+    cuisine: 'Vegan',
+    rating: 4.9,
+    deliveryTime: 30,
+    priceRange: 'moderate',
+    imageUrl: 'https://placehold.co/400x250.png',
+    reviews: [],
+    menu: [
+        { id: 'm21', name: 'Quinoa Power Bowl', description: 'Quinoa, avocado, chickpeas, and mixed greens.', price: 13.50, imageUrl: 'https://placehold.co/100x100.png' },
+        { id: 'm22', name: 'Lentil Soup', description: 'A hearty and healthy lentil soup.', price: 7.50, imageUrl: 'https://placehold.co/100x100.png' }
+    ]
+  },
+  {
+    id: '8',
+    name: 'Pho Real',
+    cuisine: 'Vietnamese',
+    rating: 4.8,
+    deliveryTime: 40,
+    priceRange: 'moderate',
+    imageUrl: 'https://placehold.co/400x250.png',
+    reviews: [],
+    menu: [
+        { id: 'm23', name: 'Classic Beef Pho', description: 'Rich broth with rice noodles and tender beef.', price: 12.99, imageUrl: 'https://placehold.co/100x100.png' },
+        { id: 'm24', name: 'Spring Rolls', description: 'Fresh spring rolls with shrimp and vermicelli.', price: 6.50, imageUrl: 'https://placehold.co/100x100.png' }
     ]
   }
 ];
