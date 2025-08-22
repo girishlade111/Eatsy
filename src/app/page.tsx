@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import { restaurants, combos } from '@/lib/data';
 import type { MenuItem } from '@/lib/types';
@@ -205,7 +206,7 @@ export default function Home() {
                       width={400}
                       height={250}
                       className="w-full h-48 object-cover"
-                      data-ai-hint={restaurant.cuisine.toLowerCase()}
+                      data-ai-hint={restaurant.cuisine.toLowerCase() + " food"}
                     />
                   </CardHeader>
                   <CardContent className="p-4">

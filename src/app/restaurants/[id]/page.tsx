@@ -1,3 +1,4 @@
+
 import { getRestaurantById } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -27,7 +28,7 @@ export default function RestaurantDetailPage({
           fill
           style={{objectFit: 'cover'}}
           className="z-0"
-          data-ai-hint={`${restaurant.cuisine.toLowerCase()} restaurant interior`}
+          data-ai-hint={`${restaurant.cuisine.toLowerCase()} food restaurant`}
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 h-full flex flex-col justify-end pb-8 relative z-10">
