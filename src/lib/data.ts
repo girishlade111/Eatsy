@@ -280,7 +280,7 @@ export const combos: Combo[] = [
       name: 'Pizza Party Pack',
       description: 'One large Pepperoni Pizza, one large Margherita, and a side of Garlic Bread.',
       price: 29.99,
-      imageUrl: 'https://placehold.co/400x250.png',
+      imageUrl: 'https://images.unsplash.com/photo-1647592286101-5e0e8f5ada6d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmb29kJTIwY29tYm98ZW58MHx8fHwxNzU1ODYzMTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080',
       restaurantName: 'Pizza Palace',
     },
     {
@@ -288,7 +288,7 @@ export const combos: Combo[] = [
       name: 'Burger & Fries Duo',
       description: 'Two Classic Burgers and a large portion of our crispy golden fries.',
       price: 19.99,
-      imageUrl: 'https://placehold.co/400x250.png',
+      imageUrl: 'https://images.unsplash.com/photo-1616205255812-c07c8102cc02?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxmb29kJTIwY29tYm98ZW58MHx8fHwxNzU1ODYzMTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080',
       restaurantName: 'Burger Barn',
     },
     {
@@ -296,7 +296,7 @@ export const combos: Combo[] = [
       name: 'Taco Fiesta',
       description: 'Six Carne Asada Tacos and a generous serving of Guacamole & Chips.',
       price: 24.99,
-      imageUrl: 'https://placehold.co/400x250.png',
+      imageUrl: 'https://images.unsplash.com/photo-1616205255912-e67ed29ac474?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxmb29kJTIwY29tYm98ZW58MHx8fHwxNzU1ODYzMTQ2fDA&ixlib=rb-4.1.0&q=80&w=1080',
       restaurantName: 'Taco Town',
     },
 ];
