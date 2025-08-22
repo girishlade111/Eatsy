@@ -73,7 +73,7 @@ export default function RestaurantDetailPage({
                   <MessageSquare className="w-6 h-6 text-primary" /> Reviews
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-4">
                 {restaurant.reviews.length > 0 ? (
                   <div className="space-y-6">
                     {restaurant.reviews.map(review => (

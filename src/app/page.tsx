@@ -1,11 +1,13 @@
 import { Button } from '@/components/ui/button';
-import { restaurants } from '@/lib/data';
+import { restaurants, combos } from '@/lib/data';
+import type { MenuItem } from '@/lib/types';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
@@ -19,10 +21,20 @@ import {
   Heart,
   Award,
   Leaf,
+  PlusCircle,
+  Tag,
+  Package,
 } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import MenuItemCard from '@/components/menu-item-card';
 
 export default function Home() {
   const featuredRestaurants = restaurants.slice(0, 4);
+  const specialOffers = restaurants
+    .flatMap((r) => r.menu.map((item) => ({ ...item, restaurant: {id: r.id, name: r.name} })))
+    .filter((item) => item.offer)
+    .slice(0, 3);
+  const topCombos = combos.slice(0, 3);
 
   return (
     <div className="flex flex-col font-sans">
@@ -98,6 +110,82 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="special-offers" className="py-16 md:py-24 bg-card">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12 flex items-center justify-center gap-3">
+            <Tag className="w-8 h-8 text-primary" /> Special Offers
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {specialOffers.map((item) => (
+              <Card key={item.id} className="overflow-hidden">
+                <Image
+                  src={item.imageUrl}
+                  alt={item.name}
+                  width={400}
+                  height={250}
+                  className="w-full h-48 object-cover"
+                  data-ai-hint="delicious food"
+                />
+                <CardContent className="p-4">
+                   <div className="flex justify-between items-start">
+                     <CardTitle className="text-xl font-headline mb-1">
+                       {item.name}
+                     </CardTitle>
+                    <Badge variant="destructive">{item.offer}</Badge>
+                   </div>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    From {item.restaurant.name}
+                  </CardDescription>
+                </CardContent>
+                <CardFooter className="flex justify-between items-center p-4 pt-2">
+                  <p className="font-semibold text-lg">${item.price.toFixed(2)}</p>
+                  <Button size="sm" variant="outline">
+                    <PlusCircle className="mr-2 h-4 w-4" />
+                    Add to Cart
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      <section id="top-combos" className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12 flex items-center justify-center gap-3">
+            <Package className="w-8 h-8 text-primary" /> Top Combos
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {topCombos.map((combo) => (
+              <Card key={combo.id} className="flex flex-col">
+                <Image
+                    src={combo.imageUrl}
+                    alt={combo.name}
+                    width={400}
+                    height={250}
+                    className="w-full h-48 object-cover"
+                    data-ai-hint="food combo"
+                />
+                <CardHeader>
+                    <CardTitle className="text-xl font-headline">{combo.name}</CardTitle>
+                    <CardDescription className="text-muted-foreground text-sm">From {combo.restaurantName}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                    <p className="text-sm text-muted-foreground">{combo.description}</p>
+                </CardContent>
+                <CardFooter className="flex justify-between items-center mt-auto">
+                    <p className="font-semibold text-xl">${combo.price.toFixed(2)}</p>
+                    <Button size="sm">
+                        <PlusCircle className="mr-2 h-4 w-4" />
+                        Add to Cart
+                    </Button>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="featured-restaurants" className="py-16 md:py-24 bg-card">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-center mb-12">
@@ -121,9 +209,13 @@ export default function Home() {
                     />
                   </CardHeader>
                   <CardContent className="p-4">
-                    <CardTitle className="text-xl font-headline mb-2">
-                      {restaurant.name}
-                    </CardTitle>
+                    <div className="flex justify-between items-start">
+                      <CardTitle className="text-xl font-headline mb-2">
+                        {restaurant.name}
+                      </CardTitle>
+                      {restaurant.category === 'veg' && <Badge variant="secondary" className='bg-green-100 text-green-800'>Veg</Badge>}
+                      {restaurant.category === 'non-veg' && <Badge variant="secondary" className='bg-red-100 text-red-800'>Non-Veg</Badge>}
+                    </div>
                     <CardDescription className="text-muted-foreground mb-4">
                       {restaurant.cuisine}
                     </CardDescription>

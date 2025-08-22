@@ -8,6 +8,7 @@ export interface Restaurant {
   imageUrl: string;
   reviews: Review[];
   menu: MenuItem[];
+  category: 'veg' | 'non-veg' | 'all';
 }
 
 export interface MenuItem {
@@ -16,6 +17,8 @@ export interface MenuItem {
   description: string;
   price: number;
   imageUrl: string;
+  offer?: string;
+  category: 'veg' | 'non-veg';
 }
 
 export interface Review {
@@ -29,4 +32,13 @@ export interface CartItem extends MenuItem {
   quantity: number;
   restaurantId: string;
   restaurantName: string;
+}
+
+export interface Combo {
+    id: string;
+    name: string;
+    description: string;
+    price: number;
+    imageUrl: string;
+    restaurantName: string;
 }

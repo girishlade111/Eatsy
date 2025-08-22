@@ -1,4 +1,4 @@
-import type { Restaurant } from './types';
+import type { Restaurant, Combo } from './types';
 
 export const restaurants: Restaurant[] = [
   {
@@ -20,6 +20,7 @@ export const restaurants: Restaurant[] = [
         description: 'Classic cheese and tomato pizza.',
         price: 12.99,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'veg',
       },
       {
         id: 'm2',
@@ -27,6 +28,7 @@ export const restaurants: Restaurant[] = [
         description: 'Loaded with pepperoni and cheese.',
         price: 14.99,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'non-veg',
       },
       {
         id: 'm3',
@@ -34,6 +36,8 @@ export const restaurants: Restaurant[] = [
         description: 'Toasted bread with garlic butter.',
         price: 5.99,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'veg',
+        offer: '15% off'
       },
       {
         id: 'm14',
@@ -41,8 +45,10 @@ export const restaurants: Restaurant[] = [
         description: 'A mix of fresh vegetables on a cheesy base.',
         price: 15.99,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'veg',
       }
     ],
+    category: 'all'
   },
   {
     id: '2',
@@ -63,6 +69,7 @@ export const restaurants: Restaurant[] = [
         description: 'Crab, avocado, and cucumber.',
         price: 8.5,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'non-veg',
       },
       {
         id: 'm5',
@@ -70,6 +77,8 @@ export const restaurants: Restaurant[] = [
         description: 'Fresh tuna on rice.',
         price: 6.0,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'non-veg',
+        offer: '10% off'
       },
       {
         id: 'm15',
@@ -77,6 +86,7 @@ export const restaurants: Restaurant[] = [
         description: 'Eel and cucumber topped with avocado.',
         price: 14.50,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'non-veg',
       },
       {
         id: 'm16',
@@ -84,8 +94,10 @@ export const restaurants: Restaurant[] = [
         description: 'Traditional Japanese soup with tofu and seaweed.',
         price: 3.50,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'veg',
       },
     ],
+    category: 'non-veg'
   },
   {
     id: '3',
@@ -105,6 +117,7 @@ export const restaurants: Restaurant[] = [
         description: 'Beef patty, lettuce, tomato, and cheese.',
         price: 9.99,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'non-veg',
       },
       {
         id: 'm7',
@@ -112,6 +125,7 @@ export const restaurants: Restaurant[] = [
         description: 'Crispy golden fries.',
         price: 3.99,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'veg',
       },
       {
         id: 'm17',
@@ -119,8 +133,10 @@ export const restaurants: Restaurant[] = [
         description: 'The classic with added crispy bacon.',
         price: 11.99,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'non-veg',
       },
     ],
+    category: 'non-veg'
   },
   {
     id: '4',
@@ -140,6 +156,7 @@ export const restaurants: Restaurant[] = [
         description: 'Three grilled steak tacos.',
         price: 11.5,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'non-veg',
       },
       {
         id: 'm9',
@@ -147,6 +164,7 @@ export const restaurants: Restaurant[] = [
         description: 'Freshly made guacamole with tortilla chips.',
         price: 7.0,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'veg',
       },
       {
         id: 'm18',
@@ -154,8 +172,10 @@ export const restaurants: Restaurant[] = [
         description: 'Flour tortilla with chicken, cheese, and peppers.',
         price: 10.50,
         imageUrl: 'https://placehold.co/100x100.png',
+        category: 'non-veg',
       }
     ],
+    category: 'all'
   },
   {
     id: '5',
@@ -169,10 +189,11 @@ export const restaurants: Restaurant[] = [
         { id: 'r7', user: 'Raj P.', rating: 5, comment: 'Best Indian food I\'ve had outside of India.'}
     ],
     menu: [
-        { id: 'm10', name: 'Chicken Tikka Masala', description: 'Creamy chicken curry.', price: 15.99, imageUrl: 'https://placehold.co/100x100.png' },
-        { id: 'm11', name: 'Garlic Naan', description: 'Soft flatbread with garlic.', price: 4.50, imageUrl: 'https://placehold.co/100x100.png' },
-        { id: 'm19', name: 'Samosa', description: 'Crispy pastry filled with spiced potatoes and peas.', price: 5.50, imageUrl: 'https://placehold.co/100x100.png' }
-    ]
+        { id: 'm10', name: 'Chicken Tikka Masala', description: 'Creamy chicken curry.', price: 15.99, imageUrl: 'https://placehold.co/100x100.png', category: 'non-veg' },
+        { id: 'm11', name: 'Garlic Naan', description: 'Soft flatbread with garlic.', price: 4.50, imageUrl: 'https://placehold.co/100x100.png', category: 'veg' },
+        { id: 'm19', name: 'Samosa', description: 'Crispy pastry filled with spiced potatoes and peas.', price: 5.50, imageUrl: 'https://placehold.co/100x100.png', category: 'veg' }
+    ],
+    category: 'all'
   },
   {
     id: '6',
@@ -184,10 +205,11 @@ export const restaurants: Restaurant[] = [
     imageUrl: 'https://placehold.co/400x250.png',
     reviews: [],
     menu: [
-        { id: 'm12', name: 'Pad Thai', description: 'Stir-fried rice noodles with shrimp.', price: 13.99, imageUrl: 'https://placehold.co/100x100.png' },
-        { id: 'm13', name: 'Tom Yum Soup', description: 'Spicy and sour soup.', price: 6.99, imageUrl: 'https://placehold.co/100x100.png' },
-        { id: 'm20', name: 'Green Curry', description: 'Spicy green curry with chicken and bamboo shoots.', price: 14.99, imageUrl: 'https://placehold.co/100x100.png' }
-    ]
+        { id: 'm12', name: 'Pad Thai', description: 'Stir-fried rice noodles with shrimp.', price: 13.99, imageUrl: 'https://placehold.co/100x100.png', category: 'non-veg' },
+        { id: 'm13', name: 'Tom Yum Soup', description: 'Spicy and sour soup.', price: 6.99, imageUrl: 'https://placehold.co/100x100.png', category: 'non-veg', offer: '20% off' },
+        { id: 'm20', name: 'Green Curry', description: 'Spicy green curry with chicken and bamboo shoots.', price: 14.99, imageUrl: 'https://placehold.co/100x100.png', category: 'non-veg' }
+    ],
+    category: 'non-veg'
   },
   {
     id: '7',
@@ -199,9 +221,10 @@ export const restaurants: Restaurant[] = [
     imageUrl: 'https://placehold.co/400x250.png',
     reviews: [],
     menu: [
-        { id: 'm21', name: 'Quinoa Power Bowl', description: 'Quinoa, avocado, chickpeas, and mixed greens.', price: 13.50, imageUrl: 'https://placehold.co/100x100.png' },
-        { id: 'm22', name: 'Lentil Soup', description: 'A hearty and healthy lentil soup.', price: 7.50, imageUrl: 'https://placehold.co/100x100.png' }
-    ]
+        { id: 'm21', name: 'Quinoa Power Bowl', description: 'Quinoa, avocado, chickpeas, and mixed greens.', price: 13.50, imageUrl: 'https://placehold.co/100x100.png', category: 'veg' },
+        { id: 'm22', name: 'Lentil Soup', description: 'A hearty and healthy lentil soup.', price: 7.50, imageUrl: 'https://placehold.co/100x100.png', category: 'veg' }
+    ],
+    category: 'veg'
   },
   {
     id: '8',
@@ -213,10 +236,68 @@ export const restaurants: Restaurant[] = [
     imageUrl: 'https://placehold.co/400x250.png',
     reviews: [],
     menu: [
-        { id: 'm23', name: 'Classic Beef Pho', description: 'Rich broth with rice noodles and tender beef.', price: 12.99, imageUrl: 'https://placehold.co/100x100.png' },
-        { id: 'm24', name: 'Spring Rolls', description: 'Fresh spring rolls with shrimp and vermicelli.', price: 6.50, imageUrl: 'https://placehold.co/100x100.png' }
-    ]
+        { id: 'm23', name: 'Classic Beef Pho', description: 'Rich broth with rice noodles and tender beef.', price: 12.99, imageUrl: 'https://placehold.co/100x100.png', category: 'non-veg' },
+        { id: 'm24', name: 'Spring Rolls', description: 'Fresh spring rolls with shrimp and vermicelli.', price: 6.50, imageUrl: 'https://placehold.co/100x100.png', category: 'non-veg' }
+    ],
+    category: 'non-veg'
+  },
+  {
+    id: '9',
+    name: 'Salad Garden',
+    cuisine: 'Healthy',
+    rating: 4.6,
+    deliveryTime: 20,
+    priceRange: 'moderate',
+    imageUrl: 'https://placehold.co/400x250.png',
+    reviews: [],
+    menu: [
+      { id: 'm25', name: 'Caesar Salad', description: 'Crisp romaine, parmesan, croutons, and Caesar dressing.', price: 10.99, imageUrl: 'https://placehold.co/100x100.png', category: 'veg' },
+      { id: 'm26', name: 'Greek Salad', description: 'Tomatoes, cucumbers, olives, feta cheese, and red onion.', price: 11.99, imageUrl: 'https://placehold.co/100x100.png', category: 'veg' },
+    ],
+    category: 'veg'
+  },
+  {
+    id: '10',
+    name: 'BBQ Central',
+    cuisine: 'Barbecue',
+    rating: 4.7,
+    deliveryTime: 55,
+    priceRange: 'expensive',
+    imageUrl: 'https://placehold.co/400x250.png',
+    reviews: [],
+    menu: [
+      { id: 'm27', name: 'Pulled Pork Sandwich', description: 'Slow-smoked pulled pork on a brioche bun.', price: 14.50, imageUrl: 'https://placehold.co/100x100.png', category: 'non-veg' },
+      { id: 'm28', name: 'Beef Brisket Plate', description: 'Tender beef brisket with a side of coleslaw.', price: 19.99, imageUrl: 'https://placehold.co/100x100.png', category: 'non-veg', offer: '10% off' },
+    ],
+    category: 'non-veg'
   }
+];
+
+export const combos: Combo[] = [
+    {
+      id: 'c1',
+      name: 'Pizza Party Pack',
+      description: 'One large Pepperoni Pizza, one large Margherita, and a side of Garlic Bread.',
+      price: 29.99,
+      imageUrl: 'https://placehold.co/400x250.png',
+      restaurantName: 'Pizza Palace',
+    },
+    {
+      id: 'c2',
+      name: 'Burger & Fries Duo',
+      description: 'Two Classic Burgers and a large portion of our crispy golden fries.',
+      price: 19.99,
+      imageUrl: 'https://placehold.co/400x250.png',
+      restaurantName: 'Burger Barn',
+    },
+    {
+      id: 'c3',
+      name: 'Taco Fiesta',
+      description: 'Six Carne Asada Tacos and a generous serving of Guacamole & Chips.',
+      price: 24.99,
+      imageUrl: 'https://placehold.co/400x250.png',
+      restaurantName: 'Taco Town',
+    },
 ];
 
 export const getRestaurantById = (id: string): Restaurant | undefined => {
