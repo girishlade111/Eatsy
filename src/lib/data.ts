@@ -9,7 +9,7 @@ export const restaurants: Restaurant[] = [
     rating: 4.5,
     deliveryTime: 30,
     priceRange: 'moderate',
-    imageUrl: 'https://placehold.co/400x250.png',
+    imageUrl: 'https://images.unsplash.com/photo-1502825305473-fedeffa5b12c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxpdGFsaWFufGVufDB8fHx8MTc1NTg2MzIxOXww&ixlib=rb-4.1.0&q=80&w=1080',
     reviews: [
       { id: 'r1', user: 'John D.', rating: 5, comment: 'Best pizza in town!' },
       { id: 'r2', user: 'Jane S.', rating: 4, comment: 'Good, but a bit pricey.' },
@@ -58,7 +58,7 @@ export const restaurants: Restaurant[] = [
     rating: 4.8,
     deliveryTime: 45,
     priceRange: 'expensive',
-    imageUrl: 'https://placehold.co/400x250.png',
+    imageUrl: 'https://images.unsplash.com/photo-1528360983277-13d401cdc186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxqYXBhbmVzZXxlbnwwfHx8fDE3NTU4NjMyMTh8MA&ixlib=rb-4.1.0&q=80&w=1080',
     reviews: [
       { id: 'r3', user: 'Kenji T.', rating: 5, comment: 'Authentic and fresh!' },
       { id: 'r4', user: 'Emily R.', rating: 4.5, comment: 'The dragon roll is a must-try.' },
@@ -107,7 +107,7 @@ export const restaurants: Restaurant[] = [
     rating: 4.2,
     deliveryTime: 25,
     priceRange: 'cheap',
-    imageUrl: 'https://placehold.co/400x250.png',
+    imageUrl: 'https://images.unsplash.com/photo-1464462605615-4ff728ecc301?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhbWVyaWNhbnxlbnwwfHx8fDE3NTU4NjMyMTh8MA&ixlib=rb-4.1.0&q=80&w=1080',
     reviews: [
       { id: 'r5', user: 'Mike L.', rating: 4, comment: 'Great value for money.'}
     ],
@@ -146,7 +146,7 @@ export const restaurants: Restaurant[] = [
     rating: 4.6,
     deliveryTime: 35,
     priceRange: 'moderate',
-    imageUrl: 'https://placehold.co/400x250.png',
+    imageUrl: 'https://images.unsplash.com/photo-1617296538902-887900d9b592?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8bWV4aWNhbnxlbnwwfHx8fDE3NTU4NjMyMTh8MA&ixlib=rb-4.1.0&q=80&w=1080',
     reviews: [
         { id: 'r6', user: 'Maria G.', rating: 5, comment: 'The tacos are so flavorful!'}
     ],
