@@ -1,3 +1,4 @@
+
 import type { Restaurant, Combo } from './types';
 
 export const restaurants: Restaurant[] = [
@@ -35,7 +36,7 @@ export const restaurants: Restaurant[] = [
         name: 'Garlic Bread',
         description: 'Toasted bread with garlic butter.',
         price: 5.99,
-        imageUrl: 'https://placehold.co/100x100.png',
+        imageUrl: 'https://images.unsplash.com/photo-1662966732476-5b743568237e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkZWxpY2lvdXMlMjBmb29kfGVufDB8fHx8MTc1NTg2MzAwMHww&ixlib=rb-4.1.0&q=80&w=1080',
         category: 'veg',
         offer: '15% off'
       },
@@ -76,7 +77,7 @@ export const restaurants: Restaurant[] = [
         name: 'Tuna Nigiri',
         description: 'Fresh tuna on rice.',
         price: 6.0,
-        imageUrl: 'https://placehold.co/100x100.png',
+        imageUrl: 'https://images.unsplash.com/photo-1520218508822-998633d997e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGVsaWNpb3VzJTIwZm9vZHxlbnwwfHx8fDE3NTU4NjMwMDB8MA&ixlib=rb-4.1.0&q=80&w=1080',
         category: 'non-veg',
         offer: '10% off'
       },
@@ -206,7 +207,7 @@ export const restaurants: Restaurant[] = [
     reviews: [],
     menu: [
         { id: 'm12', name: 'Pad Thai', description: 'Stir-fried rice noodles with shrimp.', price: 13.99, imageUrl: 'https://placehold.co/100x100.png', category: 'non-veg' },
-        { id: 'm13', name: 'Tom Yum Soup', description: 'Spicy and sour soup.', price: 6.99, imageUrl: 'https://placehold.co/100x100.png', category: 'non-veg', offer: '20% off' },
+        { id: 'm13', name: 'Tom Yum Soup', description: 'Spicy and sour soup.', price: 6.99, imageUrl: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkZWxpY2lvdXMlMjBmb29kfGVufDB8fHx8MTc1NTg2MzAwMHww&ixlib=rb-4.1.0&q=80&w=1080', category: 'non-veg', offer: '20% off' },
         { id: 'm20', name: 'Green Curry', description: 'Spicy green curry with chicken and bamboo shoots.', price: 14.99, imageUrl: 'https://placehold.co/100x100.png', category: 'non-veg' }
     ],
     category: 'non-veg'
@@ -303,3 +304,5 @@ export const combos: Combo[] = [
 export const getRestaurantById = (id: string): Restaurant | undefined => {
   return restaurants.find(r => r.id === id);
 }
+
+    
