@@ -79,3 +79,7 @@ Here is a high-level overview of the project's folder structure:
 - **`src/components`**: Home to reusable components like `Header`, `Footer`, `MenuItemCard`, etc.
 - **`src/lib`**: Includes the application's mock data (`data.ts`), TypeScript types (`types.ts`), and shared utility functions (`utils.ts`).
 - **`src/contexts`**: Manages global state. The `CartProvider` is a key part of the app's functionality.
+
+---
+
+Built by Girish Lade — https://ladestack.in
