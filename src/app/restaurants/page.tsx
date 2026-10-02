@@ -1,44 +1,10 @@
 import { restaurants } from '@/lib/data';
 import RestaurantListings from '@/components/restaurant-listings';
-import type { Restaurant } from '@/lib/types';
 import { Suspense } from 'react';
 
-export default function RestaurantsPage({
-  searchParams,
-}: {
-  searchParams?: {
-    cuisine?: string;
-    rating?: string;
-    deliveryTime?: string;
-    price?: string;
-    category?: string;
-  };
-}) {
-  const cuisineFilter = searchParams?.cuisine || 'all';
-  const ratingFilter = searchParams?.rating || 'all';
-  const deliveryTimeFilter = searchParams?.deliveryTime || 'all';
-  const priceFilter = searchParams?.price || 'all';
-  const categoryFilter = searchParams?.category || 'all';
-
-  const filteredRestaurants = restaurants.filter((r) => {
-    if (cuisineFilter !== 'all' && r.cuisine !== cuisineFilter) return false;
-    if (ratingFilter !== 'all' && r.rating < parseFloat(ratingFilter))
-      return false;
-    if (
-      deliveryTimeFilter !== 'all' &&
-      r.deliveryTime > parseInt(deliveryTimeFilter)
-    )
-      return false;
-    if (priceFilter !== 'all' && r.priceRange !== priceFilter) return false;
-    if (
-      categoryFilter !== 'all' &&
-      r.category !== categoryFilter &&
-      r.category !== 'all'
-    )
-      return false;
-    return true;
-  });
-
+// Static-export friendly: filtering is handled client-side inside
+// RestaurantListings (state + URL params), so this page needs no searchParams.
+export default function RestaurantsPage() {
   const uniqueCuisines = [
     'all',
     ...Array.from(new Set(restaurants.map((r) => r.cuisine))),
@@ -57,9 +23,8 @@ export default function RestaurantsPage({
       </div>
       <Suspense fallback={<div>Loading...</div>}>
         <RestaurantListings
-          allRestaurants={filteredRestaurants}
+          allRestaurants={restaurants}
           uniqueCuisines={uniqueCuisines}
-          searchParams={searchParams}
         />
       </Suspense>
     </div>

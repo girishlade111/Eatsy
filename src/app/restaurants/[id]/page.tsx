@@ -1,5 +1,5 @@
 
-import { getRestaurantById } from '@/lib/data';
+import { getRestaurantById, restaurants } from '@/lib/data';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { Star, Clock, MessageSquare, ChefHat } from 'lucide-react';
@@ -7,6 +7,10 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import MenuItemCard from '@/components/menu-item-card';
+
+export function generateStaticParams() {
+  return restaurants.map((restaurant) => ({ id: restaurant.id }));
+}
 
 export default function RestaurantDetailPage({
   params,
